@@ -51,7 +51,7 @@ func (b BinarySize) String() string {
 	case Size(b) >= Kibibyte:
 		return fmt.Sprintf("%.2fKiB", float64(b)/float64(Kibibyte))
 	}
-	return fmt.Sprintf("%.2fB", float64(b))
+	return fmt.Sprintf("%.0fB", float64(b))
 }
 
 // String implements fmt.Stringer for Size. It prints out the resulting
@@ -71,7 +71,7 @@ func (s Size) String() string {
 	case s >= Kilobyte:
 		return fmt.Sprintf("%.2fKB", float64(s)/float64(Kilobyte))
 	}
-	return fmt.Sprintf("%.2fB", float64(s))
+	return fmt.Sprintf("%.0fB", float64(s))
 }
 
 // Bytes returns the size as an integer byte count.
