@@ -39,19 +39,19 @@ const (
 func (b BinarySize) String() string {
 	switch {
 	case Size(b) >= Exbibyte:
-		return fmt.Sprintf("%.2fEiB", float64(b)/float64(Exbibyte))
+		return fmt.Sprintf("%.3fEiB", float64(b)/float64(Exbibyte))
 	case Size(b) >= Pebibyte:
-		return fmt.Sprintf("%.2fPiB", float64(b)/float64(Pebibyte))
+		return fmt.Sprintf("%.3fPiB", float64(b)/float64(Pebibyte))
 	case Size(b) >= Tebibyte:
-		return fmt.Sprintf("%.2fTiB", float64(b)/float64(Tebibyte))
+		return fmt.Sprintf("%.3fTiB", float64(b)/float64(Tebibyte))
 	case Size(b) >= Gibibyte:
-		return fmt.Sprintf("%.2fGiB", float64(b)/float64(Gibibyte))
+		return fmt.Sprintf("%.3fGiB", float64(b)/float64(Gibibyte))
 	case Size(b) >= Mebibyte:
-		return fmt.Sprintf("%.2fMiB", float64(b)/float64(Mebibyte))
+		return fmt.Sprintf("%.3fMiB", float64(b)/float64(Mebibyte))
 	case Size(b) >= Kibibyte:
-		return fmt.Sprintf("%.2fKiB", float64(b)/float64(Kibibyte))
+		return fmt.Sprintf("%.3fKiB", float64(b)/float64(Kibibyte))
 	}
-	return fmt.Sprintf("%.0fB", float64(b))
+	return fmt.Sprintf("%dB", b)
 }
 
 // String implements fmt.Stringer for Size. It prints out the resulting
@@ -59,19 +59,19 @@ func (b BinarySize) String() string {
 func (s Size) String() string {
 	switch {
 	case s >= Exabyte:
-		return fmt.Sprintf("%.2fEB", float64(s)/float64(Exabyte))
+		return fmt.Sprintf("%.3fEB", float64(s)/float64(Exabyte))
 	case s >= Petabyte:
-		return fmt.Sprintf("%.2fPB", float64(s)/float64(Petabyte))
+		return fmt.Sprintf("%.3fPB", float64(s)/float64(Petabyte))
 	case s >= Terabyte:
-		return fmt.Sprintf("%.2fTB", float64(s)/float64(Terabyte))
+		return fmt.Sprintf("%.3fTB", float64(s)/float64(Terabyte))
 	case s >= Gigabyte:
-		return fmt.Sprintf("%.2fGB", float64(s)/float64(Gigabyte))
+		return fmt.Sprintf("%.3fGB", float64(s)/float64(Gigabyte))
 	case s >= Megabyte:
-		return fmt.Sprintf("%.2fMB", float64(s)/float64(Megabyte))
+		return fmt.Sprintf("%.3fMB", float64(s)/float64(Megabyte))
 	case s >= Kilobyte:
-		return fmt.Sprintf("%.2fKB", float64(s)/float64(Kilobyte))
+		return fmt.Sprintf("%.3fKB", float64(s)/float64(Kilobyte))
 	}
-	return fmt.Sprintf("%.0fB", float64(s))
+	return fmt.Sprintf("%dB", s)
 }
 
 // Bytes returns the size as an integer byte count.
