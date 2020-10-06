@@ -1,6 +1,7 @@
 package size
 
 import "testing"
+import "math"
 
 func TestStrings(t *testing.T) {
 	cases := []struct {
@@ -25,6 +26,8 @@ func TestStrings(t *testing.T) {
 		{1125899906842624, 1 * Pebibyte, "1.13PB", "1.00PiB"},
 		{1000000000000000000, 1 * Exabyte, "1.00EB", "888.18PiB"},
 		{1152921504606846976, 1 * Exbibyte, "1.15EB", "1.00EiB"},
+		// This is the max value representable by Size.
+		{math.MaxInt64, 7*Exbibyte + (1*Exbibyte - 1*Byte), "9.22EB", "8.00EiB"},
 	}
 
 	for _, c := range cases {
